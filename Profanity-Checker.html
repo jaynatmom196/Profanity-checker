@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Comment: <input type="text" id="myText" placeholder="type something">
+
+<p>Click the button to the degree of profanity.</p><p id="p1"></p>
+
+<button onclick="myFunction()">check Now</button>
+
+<script>
+function myFunction() {
+   var coment = document.getElementById("myText").value ;
+   badword = ["ass", "till", "fucking"]
+
+	var comentLength= coment.split(' ').length;
+	var result=[];
+	for(var x = 0; x < badword.length; x++){
+    if(coment.indexOf(badword[x]) > -1){
+        result.push(badword[x]);
+    }
+}
+//console.log(result);
+var degree=(result.length/comentLength)*100;
+document.getElementById("p1").innerHTML=  degree?degree:0;
+//alert("degree profanity " + (result.length/comentLength)*100) // hgher the number higher the degree of profanity.
+
+}
+</script>
+
+</body>
+</html>
